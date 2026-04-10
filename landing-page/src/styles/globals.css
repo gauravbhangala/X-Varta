@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+/* Premium Performance Optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* Noise Overlay - Subtle texture for premium feel */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #00f5ff;
+  color: #050507;
+}
+
+::-webkit-selection {
+  background-color: #00f5ff;
+  color: #050507;
+}
+
+/* Enhanced Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00f5ff, #b4ff39);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00f5ff, #ff2d78);
+  background-clip: padding-box;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-color: #00f5ff transparent;
+  scrollbar-width: thin;
+}
+
+/* Premium Focus States */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #00f5ff;
+  outline-offset: 2px;
+}
+
+/* Link Transitions */
+a {
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Button Baseline Styles */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Disable default tap highlight on mobile */
+a,
+button,
+[role='button'] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Input Focus Enhancement */
+input,
+textarea {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(0, 245, 255, 0.1);
+}
+
+/* Premium Glow Effects */
+.glow-cyan {
+  text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+}
+
+.glow-acid {
+  text-shadow: 0 0 20px rgba(180, 255, 57, 0.5);
+}
+
+/* Smooth Transitions */
+button,
+a,
+.card {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 0.3s;
+}
+
+/* Performance: GPU Acceleration */
+[data-animate],
+.card,
+button,
+a {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: auto;
+}
+
+.card:hover {
+  will-change: transform, box-shadow;
+}
+
+/* Cursor Pointer Enhancement */
+[role='button'],
+button,
+a,
+input[type='checkbox'],
+input[type='radio'],
+select {
+  cursor: pointer;
+}
+
+/* Loading States */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Premium backdrop blur effect */
+.backdrop-blur-premium {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(90deg, #00f5ff, #b4ff39);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== ADVANCED PERFORMANCE OPTIMIZATION ========== */
+
+/* Reduce motion for users who prefer less animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimized animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 245, 255, 0.7);
+  }
+}
+
+/* Premium hover distortion effect */
+@keyframes subtle-scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+/* Enhanced Performance - Content Visibility Optimization */
+main,
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* Optimize large layouts */
+.grid {
+  content-visibility: auto;
+}
+
+/* Premium animation timing curves */
+:root {
+  --easing-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --easing-snappy: cubic-bezier(0.33, 0.66, 0.66, 1);
+  --easing-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Motion prefers detection for better UX */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  button,
+  a,
+  [role='button'] {
+    transition: all 0.3s var(--easing-smooth);
+  }
+}
+
+/* Enhanced button feedback with minimal layout shift */
+button,
+[role='button'],
+a.button-like {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Smooth text rendering across browsers */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Optimize SVG animations */
+svg {
+  shape-rendering: geometricPrecision;
+}
+
+/* Premium line height for readability */
+p {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+/* Enhanced accessibility */
+@media (prefers-color-scheme: dark) {
+  /* Ensure sufficient contrast */
+  *:not(code):not(pre) {
+    color-scheme: dark;
+  }
+}
+
+/* Will-change optimization - Only for hover states */
+button:hover,
+a:hover,
+[role='button']:hover {
+  will-change: transform, box-shadow;
+}
+
+/* Reset will-change to prevent memory leaks */
+button,
+a,
+[role='button'] {
+  will-change: auto;
+}
+
+/* Premium text shadows for hierarchy */
+@supports (text-shadow: 0 0 0 transparent) {
+  .text-premium-glow {
+    text-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+  }
+}
+
+/* Optimize animations for 60fps */
+.animate-spin,
+.animate-bounce,
+.animate-pulse {
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* ========== THREE.JS CANVAS OPTIMIZATION ========== */
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+/* Prevent layout shift on canvas resize */
+.canvas-container {
+  contain: layout style paint;
+}
+
+/* ========== ENHANCED FORM STYLING ========== */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 16px; /* Prevents auto-zoom on iOS */
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(242, 242, 242, 0.5);
+  transition: color 0.3s var(--easing-smooth);
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: rgba(242, 242, 242, 0.7);
+}
+

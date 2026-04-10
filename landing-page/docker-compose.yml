@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  landing-page:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_CONTACT_EMAIL=hello@nexus.agency
+    restart: always
+    volumes:
+      - /app/node_modules
+    networks:
+      - nexus-network
+
+networks:
+  nexus-network:
+    driver: bridge
