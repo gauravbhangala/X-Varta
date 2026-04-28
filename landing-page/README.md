@@ -127,11 +127,41 @@ Custom fonts are imported in `globals.css`:
 - Syne (body)
 - Space Mono (monospace)
 
+## SEO & Semantic HTML
+
+This project includes comprehensive SEO optimization and semantic HTML best practices:
+
+### Documentation
+- **[SEMANTIC_HTML_GUIDE.md](src/SEMANTIC_HTML_GUIDE.md)** - Complete guide to semantic HTML, headings, links, images, meta tags, structured data, and accessibility
+- **[SEO_CHECKLIST.md](src/SEO_CHECKLIST.md)** - 50+ item checklist covering technical SEO, on-page optimization, content strategy, and monitoring
+- **[SEO_IMPLEMENTATION_SUMMARY.md](src/SEO_IMPLEMENTATION_SUMMARY.md)** - Summary of all SEO improvements and next steps
+
+### Key Features
+- ✅ Semantic HTML elements (nav, article, section, header, footer)
+- ✅ Proper heading hierarchy (H1-H4)
+- ✅ JSON-LD structured data schemas
+- ✅ Open Graph & Twitter meta tags
+- ✅ Internal linking system
+- ✅ Image optimization guidelines
+- ✅ ARIA attributes for accessibility
+- ✅ Core Web Vitals optimization
+
+### Utilities
+- **[src/lib/schema.ts](src/lib/schema.ts)** - Schema generators (Organization, Article, Breadcrumb, FAQ, Service, Review)
+- **[src/lib/content-links.ts](src/lib/content-links.ts)** - Internal linking relationships
+
+### Quick Start for SEO
+1. Read [SEO_IMPLEMENTATION_SUMMARY.md](src/SEO_IMPLEMENTATION_SUMMARY.md)
+2. Review [SEMANTIC_HTML_GUIDE.md](src/SEMANTIC_HTML_GUIDE.md) for best practices
+3. Use [SEO_CHECKLIST.md](src/SEO_CHECKLIST.md) to verify implementation
+4. Use schema utilities from `src/lib/schema.ts` in new pages
+
 ## Performance
 
-- **Lighthouse Score**: 90+
+- **Lighthouse Score**: 90+ (SEO component)
 - **Core Web Vitals**: Optimized
 - **Bundle Size**: ~45KB gzipped
+- **Accessibility Score**: 90+
 
 ## Browser Support
 

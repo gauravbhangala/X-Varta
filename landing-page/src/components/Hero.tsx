@@ -227,7 +227,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Main Heading */}
-        <div className="font-bebas text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight mb-3 overflow-hidden">
+        <h1 className="font-bebas text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight mb-3 overflow-hidden">
           {['Built to', 'Scale.', 'Engineered to Measure.'].map((text, i) => (
             <motion.div
               key={i}
@@ -240,7 +240,7 @@ const Hero = () => {
               {text}
             </motion.div>
           ))}
-        </div>
+        </h1>
 
         {/* Subheading - Professional value prop */}
         <motion.p
@@ -305,6 +305,8 @@ const Hero = () => {
           x: useTransform(mouseX, [-100, 100], [-10, 10]),
           y: useTransform(mouseY, [-100, 100], [-15, 15]),
         }}
+        role="region"
+        aria-label="Key performance metrics"
       >
         {stats.map((stat, i) => (
           <motion.div

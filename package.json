@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "html-pdf": "^3.0.1",
+    "markdown-it": "^14.1.1",
+    "puppeteer": "^24.42.0"
+  }
+}

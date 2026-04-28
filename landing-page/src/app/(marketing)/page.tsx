@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { homeContent } from '@/content/pages/home'
 import Hero from '@/components/Hero'
 import Marquee from '@/components/Marquee'
 import ClientMetrics from '@/components/ClientMetrics'
@@ -10,15 +11,41 @@ import WhyUs from '@/components/WhyUs'
 import Process from '@/components/Process'
 import CTA from '@/components/CTA'
 
+/**
+ * Home Page - Server Component
+ * 
+ * Content strategy:
+ * - Metadata imported from /content/pages/home.ts
+ * - Components organized in /components with semantic sections
+ * - Server-rendered for optimal SEO and performance
+ * - Client-side animations handled within components
+ */
+
 export const metadata: Metadata = {
-  title: 'NEXUS — Enterprise Digital Solutions',
-  description: 'Enterprise-grade digital transformation, scalable systems, and measurable growth outcomes.',
-  keywords: 'digital agency, enterprise solutions, web development, digital transformation',
+  title: homeContent.meta.title,
+  description: homeContent.meta.description,
+  keywords: homeContent.meta.keywords.join(', '),
+  alternates: {
+    canonical: homeContent.meta.canonical,
+  },
   openGraph: {
-    title: 'NEXUS — Enterprise Digital Solutions',
-    description: 'Enterprise-grade digital transformation, scalable systems, and measurable growth outcomes.',
+    title: homeContent.meta.ogTitle,
+    description: homeContent.meta.ogDescription,
+    url: homeContent.meta.ogUrl,
     type: 'website',
-    url: 'https://nexus.agency',
+    images: [
+      {
+        url: homeContent.meta.ogImage,
+        width: 1200,
+        height: 630,
+        alt: homeContent.meta.ogTitle,
+      },
+    ],
+  },
+  twitter: {
+    card: homeContent.meta.twitterCard as 'summary_large_image',
+    title: homeContent.meta.twitterTitle,
+    description: homeContent.meta.twitterDescription,
   },
   robots: {
     index: true,
@@ -30,7 +57,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="bg-black overflow-x-hidden" role="main">
       {/* Hero Section */}

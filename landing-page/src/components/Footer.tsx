@@ -38,6 +38,7 @@ const Footer = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       className="border-t border-cyan/20 px-12 py-12 flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10 bg-black/20 backdrop-blur-sm"
+      role="contentinfo"
     >
       {/* Logo */}
       <motion.div
@@ -56,30 +57,33 @@ const Footer = () => {
       </motion.p>
 
       {/* Links */}
-      <motion.ul
+      <motion.nav
+        aria-label="Footer links"
         variants={footerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         className="flex gap-8 list-none"
       >
-        {footerLinks.map((link) => (
-          <motion.li key={link.label} variants={itemVariants}>
-            <a
-              href={link.href}
-              className="font-mono text-xs tracking-wider uppercase text-muted hover:text-cyan transition-colors relative group"
-            >
-              {link.label}
-              <motion.span
-                className="absolute bottom-0 left-0 h-px bg-cyan"
-                initial={{ width: 0 }}
-                whileHover={{ width: '100%' }}
-                transition={{ duration: 0.3 }}
-              />
-            </a>
-          </motion.li>
-        ))}
-      </motion.ul>
+        <ul className="flex gap-8 list-none">
+          {footerLinks.map((link) => (
+            <motion.li key={link.label} variants={itemVariants}>
+              <a
+                href={link.href}
+                className="font-mono text-xs tracking-wider uppercase text-muted hover:text-cyan transition-colors relative group"
+              >
+                {link.label}
+                <motion.span
+                  className="absolute bottom-0 left-0 h-px bg-cyan"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: '100%' }}
+                  transition={{ duration: 0.3 }}
+                />
+              </a>
+            </motion.li>
+          ))}
+        </ul>
+      </motion.nav>
     </motion.footer>
   )
 }

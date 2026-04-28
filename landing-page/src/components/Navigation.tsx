@@ -49,6 +49,7 @@ const Navigation = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 py-6 transition-all duration-400 ${
         isScrolled
           ? 'bg-black/85 border-b border-cyan/20 backdrop-blur-xl py-4'
